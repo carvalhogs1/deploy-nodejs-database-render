@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Contatos</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('../shared/header') %>
+    <h1>Lista de Contatos</h1>
+    <ul>
+      <% if (contatos.length > 0) { %>
+        <% contatos.forEach(contato => { %>
+          <li><%= contato.nome %> <%= contato.sobrenome %> - <%= contato.email %></li>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhum contato encontrado.</p>
+      <% } %>
+    </ul>
+  </body>
+</html>
